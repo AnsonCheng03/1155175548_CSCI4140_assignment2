@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "CUHK CUSIS Automation",
+  "version": "1.0",
+  "description": "Automate the registration process on CUHK CUSIS.",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["https://cusis.cuhk.edu.hk/*"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://cusis.cuhk.edu.hk/psc/CSPRD_newwin/EMPLOYEE/SA/c/SSR_STUDENT_FL.SSR_SHOP_CART_FL.GBL*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  }
+}

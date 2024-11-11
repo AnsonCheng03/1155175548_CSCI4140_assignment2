@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CUHK CUSIS Helper</title>
+</head>
+
+<body>
+    <h2>Click to run automation</h2>
+    <button id="run-script">Start</button>
+    <script>
+        document.getElementById('run-script').addEventListener('click', () => {
+            chrome.scripting.executeScript({
+                target: { tabId: chrome.tabs.query({ active: true, currentWindow: true })[0].id },
+                files: ['content.js']
+            });
+        });
+    </script>
+</body>
+
+</html>
